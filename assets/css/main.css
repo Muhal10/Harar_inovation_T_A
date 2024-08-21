@@ -39,12 +39,15 @@
 }
 
 .dark-background {
-  --background-color: #1e4356;
+  --background-color: #0c73a7;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #284e62;
   --contrast-color: #ffffff;
-}
+  border-top-width: 5px;
+  border-right-width: 10px;
+  border-bottom-width: 8px;
+  border-left-width: 3px;}
 
 /* Smooth scroll */
 :root {
