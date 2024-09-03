@@ -232,7 +232,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: calc(1.325rem + 0.9vw);
+  font-size: calc(1rem + 0.9vw);
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -8377,7 +8377,7 @@ textarea.form-control-lg {
 }
 
 .fs-2 {
-  font-size: calc(1.325rem + 0.9vw) !important;
+  font-size: calc(1rem + 0.9vw) !important;
 }
 
 .fs-3 {

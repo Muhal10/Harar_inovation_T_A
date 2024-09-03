@@ -51,7 +51,7 @@
       e.stopImmediatePropagation();
     });
   });
-
+  
   /**
    * Preloader
    */
@@ -65,8 +65,21 @@
   /**
    * Scroll top button
    */
+  let lastScrollTop = 0;
   let scrollTop = document.querySelector('.scroll-top');
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        header.style.top = '-50px'; // Hide header
+    } else {
+        // Scrolling up
+        header.style.top = '0'; // Show header
+    }
+    lastScrollTop = scrollTop;
+});
   function toggleScrollTop() {
     if (scrollTop) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
@@ -95,7 +108,18 @@
     });
   }
   window.addEventListener('load', aosInit);
+const navbar = document.querySelector('.navbar');
+let lastScrollY = window.scrollY;
 
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY && window.scrollY > 100) {
+    navbar.classList.add('scrolled');
+  } else if (window.scrollY < lastScrollY && window.scrollY < 100) {
+    navbar.classList.remove('scrolled');
+  }
+  lastScrollY = window.scrollY;
+});
+  
   /**
    * Auto generate the carousel indicators
    */

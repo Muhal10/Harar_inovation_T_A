@@ -1,9 +1,3 @@
-
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -29,8 +23,17 @@
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #555555; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #68a4c4; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-size: 80px; /* Default size of the navigation menu */
+  --nav-scroll-size: 60px; /* Size of the navigation menu when scrolled */
+}
+.navbar {
+  height: var(--nav-size);
+  transition: height 0.3s ease-in-out;
 }
 
+.scrolled .navbar {
+  height: var(--nav-scroll-size);
+}
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
@@ -51,7 +54,8 @@
 
 /* Smooth scroll */
 :root {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
+
 }
 
 /*--------------------------------------------------------------
@@ -224,8 +228,8 @@ h6 {
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 15px 0;
-  transition: all 0.5s;
+  padding: 5px 0;
+  transition: top 0.3s;
   z-index: 997;
 }
 
@@ -444,8 +448,8 @@ h6 {
     position: static;
     display: none;
     z-index: 99;
-    padding: 10px 0;
-    margin: 10px 20px;
+    padding: 5px 0;
+    margin: 5px 8px;
     background-color: var(--nav-dropdown-background-color);
     border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     box-shadow: none;
@@ -459,6 +463,7 @@ h6 {
   .navmenu .dropdown>.dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
+    overflow: hidden;
   }
 
   .mobile-nav-active {
@@ -693,7 +698,7 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 4px;
-  transition: all 0.4s;
+  transition: top 0.4s;
 }
 
 .scroll-top i {
