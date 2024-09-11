@@ -37,12 +37,12 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #218cdd;
+  --background-color: #cfcfcf;
   --surface-color: #ce2f2f;
 }
 
 .dark-background {
-  --background-color: #8549aa;
+  --background-color: #8216c5;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #191a1b;
@@ -64,7 +64,7 @@
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+  font-family: Arial, sans-serif;
 }
 
 a {
@@ -88,6 +88,76 @@ h6 {
   font-family: var(--heading-font);
 }
 
+button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 5px 7px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+input[type="text"], input[type="file"], textarea {
+  width: 35%;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="file"] {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+ form {
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+ button:hover {
+  background: #218838;
+}
+ 
+ .delete-btn:hover {
+  background: #c82333;
+}
+ #newsDisplay {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 0.5fr));
+  gap: 20px;
+  justify-items: end; 
+}
+#imageDisplay {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 0.5fr));
+  justify-items: end; 
+  gap: 20px;
+}
+.news-item {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 2px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  text-align: left; 
+  width: 100%; 
+}
+.image-item {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 4px;
+} 
+ 
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -252,7 +322,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #1e4356;
+  --background-color: #8216c5;
 }
 
 /*--------------------------------------------------------------

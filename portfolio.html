@@ -9,8 +9,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/Hinta-favicon.png" rel="icon">
+
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -48,7 +48,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html" class="active">Portfolio</a></li>
           <li><a href="team.html">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="blog.html">News</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -249,16 +249,35 @@
                   <!-- <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a> -->
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
+            <!-- End Portfolio Item -->
 
           </div><!-- End Portfolio Container -->
 
         </div>
 
       </div>
-
+        
     </section><!-- /Portfolio Section -->
+        <div id="newsContent"></div>
+        <p>Uploaded Image</p>
+        <div id="imageDisplay">
 
+        </div>
+            <div class="post-img">
+          <form id="imageForm">
+            <input type="file" id="image" accept="image/*" required>
+            <button type="submits">Upload</button>
+        </form>
+    
+        </div>
+        
+        <div class="portfolio-info">
+          <!-- <h4>Books 3</h4> -->
+          <!-- <p>Lorem ipsum, dolor sit amet consectetur</p> -->
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer id="footer" class="footer dark-background">
@@ -282,10 +301,10 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="about.html">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="blog.html">News</a></li>
           </ul>
         </div>
 
@@ -293,9 +312,9 @@
           <h4>Our Services</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Marketing</a></li>
           </ul>
         </div>
 
@@ -303,10 +322,10 @@
           <h4>Follow Us</h4>
           <p>This our Social Media </p>
           <div class="social-links d-flex">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
+            <a href="https://www.facebook.com/p/Harari-Regional-State-Innovation-and-Technology-Agency-100075949910571/"><i class="bi bi-facebook"></i></a>
+            <!-- <a href=""><i class="bi bi-instagram"></i></a> -->
+            <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
           </div>
         </div>
 
@@ -344,6 +363,59 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
   <!-- Main JS File -->
+   <script>
+    
+    document.getElementById('imageForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      const image = document.getElementById('image').files[0]; // Get the selected file
+
+      if (image) {
+          const reader = new FileReader(); // Create a FileReader to read the image
+          reader.onload = function(e) {
+              const imageItem = {
+                  image: e.target.result // Store the image data URL
+              };
+
+              // Retrieve existing images from local storage or initialize an empty array
+              let imageArray = JSON.parse(localStorage.getItem('images')) || [];
+              imageArray.push(imageItem); // Add the new image to the array
+              localStorage.setItem('images', JSON.stringify(imageArray)); // Update local storage
+
+              displayImages(); // Display the images
+          }
+          reader.readAsDataURL(image); // Read the image as a data URL
+      }
+  });
+
+  // Function to display images
+  function displayImages() {
+      const imageArray = JSON.parse(localStorage.getItem('images')) || []; // Get images from local storage
+      const imageDisplay = document.getElementById('imageDisplay');
+      imageDisplay.innerHTML = ''; // Clear current display
+
+      // Loop through the image array and create HTML for each image
+      imageArray.forEach((item, index) => {
+          const imageItemHtml = `
+              <div class="image-item">
+                  <img src="${item.image}" alt="Uploaded Image">
+                  <button class="delete-btn" onclick="deleteImage(${index})">Delete</button>
+              </div>
+          `;
+          imageDisplay.innerHTML += imageItemHtml; // Append the HTML
+      });
+  }
+
+  // Function to delete an image
+  function deleteImage(index) {
+      let imageArray = JSON.parse(localStorage.getItem('images')) || []; // Get images from local storage
+      imageArray.splice(index, 1); // Remove the item at the specified index
+      localStorage.setItem('images', JSON.stringify(imageArray)); // Update local storage
+      displayImages(); // Refresh the display
+  }
+
+  // Load images on page load
+  window.onload = displayImages;
+   </script>
   <script src="assets/js/main.js"></script>
 
 </body>

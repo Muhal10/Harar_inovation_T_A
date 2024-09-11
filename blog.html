@@ -9,8 +9,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/Hinta-favicon.png" rel="icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -102,18 +101,16 @@
                 <img src="https://hararicommunication.gov.et/storage/2024/01/411010500_376717558203238_2065286722674609010_n-300x169.jpg" alt="" class="img-fluid">
               </div>
 
-              <p class="post-category">Politics</p>
+              <p class="post-category"><a href="blog-details.html">Cummunicatio</a>
+                </p>
 
-              <!-- <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2> -->
-
+             
               <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                
                 <div class="post-meta">
-                  <p class="post-author">Maria Doe</p>
+                  <p class="post-author">  </p>
                   <p class="post-date">
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                    <!-- <time datetime="2022-01-01">Jan 1, 2022</time> -->
                   </p>
                 </div>
               </div>
@@ -128,18 +125,18 @@
                 <img src="https://hararicommunication.gov.et/storage/2024/01/414471265_382807280927599_7507992468027910127_n-300x135.jpg" alt="" class="img-fluid">
               </div>
 
-              <p class="post-category">Sports</p>
+              <p class="post-category">  </p>
 
               <!-- <h2 class="title">
                 <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
               </h2> -->
 
               <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                
                 <div class="post-meta">
-                  <p class="post-author">Allisa Mayer</p>
+                  <p class="post-author">  </p>
                   <p class="post-date">
-                    <time datetime="2022-01-01">Jun 5, 2022</time>
+                    <!-- <time datetime="2022-01-01">Jun 5, 2022</time> -->
                   </p>
                 </div>
               </div>
@@ -154,18 +151,18 @@
                 <img src="https://hararicommunication.gov.et/storage/2024/01/382994335_336403662234628_5705429348622868444_n-300x200.jpg" alt="" class="img-fluid">
               </div>
 
-              <p class="post-category">Entertainment</p> -->
+              <p class="post-category">   </p> 
 
               <!-- <h2 class="title">
                 <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
               </h2>  -->
 
               <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+               
                 <div class="post-meta">
-                  <p class="post-author">Mark Dower</p>
+                  <p class="post-author">  </p>
                   <p class="post-date">
-                    <time datetime="2022-01-01">Jun 22, 2022</time>
+                    <!-- <time datetime="2022-01-01">Jun 22, 2022</time> -->
                   </p>
                 </div>
               </div>
@@ -180,91 +177,75 @@
                 <img src="https://hararicommunication.gov.et/storage/2024/01/406625528_367047079170286_3306885033048323967_n-300x135.jpg" alt="" class="img-fluid">
               </div>
 
-              <p class="post-category">Sports</p>
+              <p class="post-category"> </p>
 
               <!-- <h2 class="title">
                 <a href="blog-details.html">Non rem rerum nam cum quo minus olor distincti</a>
               </h2> -->
 
               <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author-4.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+                
                 <div class="post-meta">
-                  <p class="post-author">Lisa Neymar</p>
+                  <p class="post-author"> </p>
                   <p class="post-date">
-                    <time datetime="2022-01-01">Jun 30, 2022</time>
+                    <!-- <time datetime="2022-01-01">Jun 30, 2022</time> -->
                   </p>
                 </div>
               </div>
 
             </article>
-          </div><!-- End post list item -->
+          </div>
+          <!-- <h2>Uploaded News Articles</h2>
+          <div id="newsContainer">
 
-          <!-- <div class="col-lg-4">
-            <article> -->
+          </div>
+       <button onclick="deleteAllNews()">Delete All News</button> -->
+            <div id="newsDisplay">
 
-              <!-- <div class="post-img">
-                <img src="assets/img/blog/blog-5.jpg" alt="" class="img-fluid">
-              </div>
+            </div>
+              <form id="newsForm">
+                <input type="text" id="title" placeholder="Title" required>
+                <input type="file" id="image" accept="image/*" required>
+                <textarea id="content" rows="4" placeholder="Content" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+              
+            <!-- <form id="newsForm">
+              <input type="text" id="title" name="title" placeholder="Enter title" required><br>
+              <textarea id="description" name="description" placeholder="Enter description" required></textarea><br>
+              <input type="file" id="imageInput" name="imageFile" accept="image/*" required><br>
+              <button type="submit">Upload News</button>
+          </form> within Mangose database-->
 
-              <p class="post-category">Politics</p>
+            <!-- <form action="/process.php" method="POST" enctype="multipart/form-data">
+              <label for="content">Content:</label>
+              <textarea name="content"required></textarea><br>
+              <label for="image">Image:</label>
+              <input type="file" name="image" accept="image/*" required><br>
+              <input type="submit" value="Submit"> Submit</input> 
+      
+          </form> -->
 
-              <h2 class="title">
-                <a href="blog-details.html">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
-              </h2> -->
-
-              <!-- <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author-5.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Denis Peterson</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jan 30, 2022</time>
-                  </p>
-                </div>
-              </div> -->
-
-            </article>
-          </div><!-- End post list item -->
-
-          <!-- <div class="col-lg-4"> -->
-            <!-- <article> -->
-
-              <!-- <div class="post-img">
-                <img src="assets/img/blog/blog-6.jpg" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Entertainment</p>
-
-              <h2 class="title">
-                <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
-              </h2> -->
-
-              <!-- <div class="d-flex align-items-center">
-                <img src="assets/img/blog/blog-author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Mika Lendon</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Feb 14, 2022</time>
-                  </p>
-                </div>
-              </div> -->
-
-            <!-- </article> -->
+        
+              
+         
+           
           </div><!-- End post list item -->
 
         </div>
       </div>
 
-    </section><!-- /Blog Posts Section -->
+    <!-- </section><!-- /Blog Posts Section -->
 
     <!-- Blog Pagination Section -->
-    <section id="blog-pagination" class="blog-pagination section">
+    <!-- <section id="blog-pagination" class="blog-pagination section">
 
-      <div class="container">
-        <div class="d-flex justify-content-center">
+      <div class="container"> -->
+        <!-- <div class="d-flex justify-content-center">
           <ul>
             <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#" class="active">2</a></li>
+            <li><a href="#"class="active">1</a></li>
+            <li><a href="#" >2</a></li>
             <li><a href="#">3</a></li>
             <li><a href="#">4</a></li>
             <li>...</li>
@@ -272,9 +253,9 @@
             <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
-    </section><!-- /Blog Pagination Section -->
+    <!-- </section>/Blog Pagination Section --> -->
 
   </main>
 
@@ -299,10 +280,10 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="about.html">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="blog.html">News</a></li>
           </ul>
         </div>
 
@@ -310,9 +291,9 @@
           <h4>Our Services</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="#">User Interface</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="services.html">Marketing</a></li>
           </ul>
         </div>
 
@@ -320,10 +301,10 @@
           <h4>Follow Us</h4>
           <p>This our Social Media </p>
           <div class="social-links d-flex">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
+            <a href="https://www.facebook.com/p/Harari-Regional-State-Innovation-and-Technology-Agency-100075949910571/"><i class="bi bi-facebook"></i></a>
+            <!-- <a href=""><i class="bi bi-instagram"></i></a> -->
+            <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
           </div>
         </div>
 
@@ -362,6 +343,49 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/node.js"></script>
+  <!-- <script>
+    function addNewsItem() {
+        const imageInput = document.getElementById('imageInput');
+        const textInput = document.getElementById('textInput');
+        const newsContainer = document.getElementById('newsContainer');
+
+        if (imageInput.files.length === 0) {
+            alert('Please select an image file.');
+            return;
+        }
+
+        const file = imageInput.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            const newsItem = document.createElement('div');
+            newsItem.className = 'news-item';
+
+            const image = document.createElement('img');
+            image.src = e.target.result;
+            image.alt = 'News Image';
+
+            const title = document.createElement('h2');
+            title.textContent = ''; // Update with your news title
+
+            const description = document.createElement('p');
+            description.textContent = textInput.value;
+
+            newsItem.appendChild(image);
+            newsItem.appendChild(title);
+            newsItem.appendChild(description);
+
+            newsContainer.appendChild(newsItem);
+
+            // Clear inputs
+            imageInput.value = '';
+            textInput.value = '';
+        };
+
+        reader.readAsDataURL(file);
+    }
+</script> -->
 
 </body>
 

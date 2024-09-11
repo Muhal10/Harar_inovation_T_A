@@ -215,3 +215,94 @@ window.addEventListener('scroll', () => {
   });
 
 })();
+document.getElementById('newsForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const title = document.getElementById('title').value;
+  const image = document.getElementById('image').files[0];
+  const content = document.getElementById('content').value;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+      const newsItem = {
+          title: title,
+          image: e.target.result,
+          content: content
+      };
+
+      // Save to local storage
+      let newsArray = JSON.parse(localStorage.getItem('news')) || [];
+      newsArray.push(newsItem);
+      localStorage.setItem('news', JSON.stringify(newsArray));
+
+      displayNews();
+  }
+  reader.readAsDataURL(image);
+});
+
+function displayNews() {
+  const newsArray = JSON.parse(localStorage.getItem('news')) || [];
+  const newsDisplay = document.getElementById('newsDisplay');
+  newsDisplay.innerHTML = '';
+
+  newsArray.forEach((item, index) => {
+      const newsItemHtml = `
+          <div class="news-item">
+              <h2>${item.title}</h2>
+              <img src="${item.image}" alt="${item.title}">
+              <p>${item.content}</p>
+              <button class="delete-btn" onclick="deleteNews(${index})">Delete</button>
+          </div>
+      `;
+      newsDisplay.innerHTML += newsItemHtml;
+  });
+}
+
+function deleteNews(index) {
+  let newsArray = JSON.parse(localStorage.getItem('news')) || [];
+  newsArray.splice(index, 1); // Remove the item at the specified index
+  localStorage.setItem('news', JSON.stringify(newsArray)); // Update local storage
+  displayNews(); // Refresh the display
+}
+
+// Load news items on page load
+window.onload = displayNews;
+// within mangose
+// document.getElementById('newsForm').onsubmit = function(event) {
+//   event.preventDefault();
+
+//   const titleInput = document.getElementById('title');
+//   const descriptionInput = document.getElementById('description');
+//   const imageInput = document.getElementById('imageInput');
+
+//   const formData = new FormData();
+//   formData.append('title', titleInput.value);
+//   formData.append('description', descriptionInput.value);
+//   formData.append('imageFile', imageInput.files[0]);
+
+//   fetch('/upload-news', {
+//       method: 'POST',
+//       body: formData
+//   })
+//   .then(response => response.json())
+//   .then(data => {
+//       // Show the image in the newsContainer
+//       if (data.imageUrl) {
+//           const container = document.getElementById('newsContainer');
+//           const img = document.createElement('img');
+//           img.src = data.imageUrl;
+//           img.alt = 'Uploaded Image';
+//           container.appendChild(img);
+//       }
+
+//       alert(data.message);
+//       loadNews();  // Refresh news articles
+//   })
+//   .catch(error => {
+//       console.error('Error uploading news:', error);
+//   });
+
+//   // Clear the form after submission
+//   titleInput.value = '';
+//   descriptionInput.value = '';
+//   imageInput.value = '';
+// };

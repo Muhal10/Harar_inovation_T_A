@@ -1,0 +1,28 @@
+{
+  "name": "hintas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muhal10/Harar_inovation_T_A.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muhal10/Harar_inovation_T_A/issues"
+  },
+  "homepage": "https://github.com/Muhal10/Harar_inovation_T_A#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.20.0",
+    "fs": "^0.0.1-security",
+    "mongoose": "^8.6.1",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
+  }
+}
